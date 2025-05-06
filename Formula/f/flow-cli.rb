@@ -21,7 +21,7 @@ class FlowCli < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "c8a080da468f50926d4ae50d2aedeec2a0132e4473115949a25ebe3b23988257"
   end
 
-  depends_on "go" => :build
+  depends_on "go@1.23" => :build # crashes with go 1.24, see https://github.com/onflow/flow-cli/issues/1902
 
   conflicts_with "flow", because: "both install `flow` binaries"
 
